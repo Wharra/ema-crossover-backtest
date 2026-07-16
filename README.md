@@ -12,7 +12,7 @@ crosses a long one (EMA 50). Signals are only kept when confirmed by volume
 ## Architecture
 
 The pipeline is split into single-responsibility components, each independently testable:
-
+```
 ```
 Loader -> Processor -> Signal -> Strategy -> OrderSender
                                                 |
@@ -63,4 +63,3 @@ ctest --test-dir build --output-on-failure     # run the tests
 - [ ] Strategy with volume filter
 - [ ] Order sender interface
 - [ ] Backtest engine and metrics
-```
