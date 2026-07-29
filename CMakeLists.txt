@@ -28,4 +28,4 @@ target_link_libraries(tests PRIVATE Catch2::Catch2WithMain core)
                                               # core = so tests can call my own code
 
 enable_testing()                              # turn on ctest
-add_test(NAME unit_tests COMMAND tests)       # register one test entry = run the "tests" binary
+add_test(NAME tests COMMAND tests WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
