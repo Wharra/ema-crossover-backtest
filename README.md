@@ -60,6 +60,6 @@ ctest --test-dir build --output-on-failure     # run the tests
 - [x] CSV loader
 - [x] Indicators (EMA, volume average)
 - [x] Crossover signal detection
-- [ ] Strategy with volume filter
+- [x] Strategy with volume filter
 - [ ] Order sender interface
 - [ ] Backtest engine and metrics
