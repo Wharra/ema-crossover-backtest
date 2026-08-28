@@ -58,8 +58,8 @@ ctest --test-dir build --output-on-failure     # run the tests
 - [x] Project skeleton (CMake + Catch2)
 - [x] `Bar` data type
 - [x] CSV loader
-- [ ] Indicators (EMA, volume average)
-- [ ] Crossover signal detection
-- [ ] Strategy with volume filter
+- [x] Indicators (EMA, volume average)
+- [x] Crossover signal detection
+- [x] Strategy with volume filter
 - [ ] Order sender interface
 - [ ] Backtest engine and metrics
