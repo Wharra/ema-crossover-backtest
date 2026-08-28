@@ -59,7 +59,7 @@ ctest --test-dir build --output-on-failure     # run the tests
 - [x] `Bar` data type
 - [x] CSV loader
 - [x] Indicators (EMA, volume average)
-- [ ] Crossover signal detection
+- [x] Crossover signal detection
 - [ ] Strategy with volume filter
 - [ ] Order sender interface
 - [ ] Backtest engine and metrics
