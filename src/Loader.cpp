@@ -28,7 +28,7 @@ std::vector<Bar> loadBarsFromCSV(const std::string& path) {
         Bar b;                       // on va remplir cette Bar avec les morceaux
 
         std::getline(ss, field, ',');  b.date   = field;
-        std::getline(ss, field, ',');  b.open   = std::stod(field);
+        std::getline(ss, field, ',');  b.open   = std::stod(field); 
         std::getline(ss, field, ',');  b.high   = std::stod(field);
         std::getline(ss, field, ',');  b.low    = std::stod(field);
         std::getline(ss, field, ',');  b.close  = std::stod(field);
