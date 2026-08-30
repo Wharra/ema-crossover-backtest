@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)                    # compile with C++17
 set(CMAKE_CXX_STANDARD_REQUIRED ON)           # C++17 is mandatory, no silent fallback
 
 #My code
-add_library(core src/Loader.cpp src/Processor.cpp src/Signal.cpp src/Strategy.cpp)              # build a library "core" from my .cpp files (business logic, no main)
+add_library(core src/Loader.cpp src/Processor.cpp src/Signal.cpp src/Strategy.cpp src/Backtester.cpp)              # build a library "core" from my .cpp files (business logic, no main)
 target_include_directories(core PUBLIC src)   # headers live in src/ ; PUBLIC = whoever links to core inherits this
 
 add_executable(app src/main.cpp)              # build the runnable program "app" (has main())

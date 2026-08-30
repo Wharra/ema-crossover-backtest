@@ -10,6 +10,7 @@ ctest --test-dir build --output-on-failure    # 3 lance les tests
 #include "../src/Signal.hpp"
 #include "../src/Strategy.hpp"
 #include "../src/ConsoleOrderSender.hpp"
+#include "../src/Backtester.hpp"
 
 int main() {
     // on charge les données
@@ -31,5 +32,18 @@ int main() {
         }
     }
 
-    return 0;
+    // run the backtest
+    BacktestResult result = runBacktest(bars, emaShort, emaLong, volumeAvg);
+
+    std::cout << "\n===== BACKTEST RESULTS =====\n";
+    std::cout << "Total PnL : " << result.totalPnL << "\n";
+    std::cout << "Trades    : " << result.numTrades << "\n";
+    std::cout << "Wins      : " << result.wins << "\n";
+
+    if (result.numTrades > 0) {
+        double winRate = 100.0 * result.wins / result.numTrades;
+        std::cout << "Win rate  : " << winRate << " %\n";
+    }
+
+    return 0;   // <-- tout en bas : c'est la dernière chose qui s'exécute
 }
