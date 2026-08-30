@@ -5,6 +5,8 @@
 #include "../src/Processor.hpp"
 #include "../src/Signal.hpp"
 #include "../src/Strategy.hpp"
+#include "../src/OrderSender.hpp"          // en haut avec les autres includes
+#include "../src/ConsoleOrderSender.hpp"
 
 TEST_CASE("skeleton sanity check") {
     REQUIRE(1 + 1 == 2);
@@ -82,4 +84,15 @@ TEST_CASE("strategy keeps volume-confirmed crosses, rejects weak ones") {
 
     // jour 3 : pas de cross du tout -> None
     REQUIRE(decideSignal(bars, emaShort, emaLong, volumeAvg, 3) == Signal::None);
+}
+
+TEST_CASE("order sender plugs into the interface") {
+    ConsoleOrderSender console;            // un appareil concret
+
+    OrderSender* sender = &console;        // ...vu à travers la prise (pointeur d'interface)
+
+    sender->send(Signal::Buy, 101.0);      // on commande via la prise
+    sender->send(Signal::Sell, 100.5);
+
+    REQUIRE(true);   // si ça compile et tourne sans crash, le branchement marche
 }
