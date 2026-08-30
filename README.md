@@ -62,4 +62,4 @@ ctest --test-dir build --output-on-failure     # run the tests
 - [x] Crossover signal detection
 - [x] Strategy with volume filter
 - [x] Order sender interface
-- [ ] Backtest engine and metrics
+- [x] Backtest engine and metrics
